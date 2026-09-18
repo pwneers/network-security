@@ -1,0 +1,67 @@
+# --- GENERATED PDFS
+*.pdf
+
+# --- OPERATING SYSTEM FILES
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Icon
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux / freedesktop
+.directory
+.Trash-*/
+
+# --- EDITOR AND TEMPORARY FILES
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+**/settings.local.json
+
+# --- TYPST / LATEX AUXILIARY FILES
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.out
+*.glo
+*.ist
+*.idx
+*.ilg
+*.ind
+*.acn
+*.acr
+*.alg
+*.glg
+*.gls
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# Build/output directories
+.build/
+build/
+out/
+temp/
