@@ -73,6 +73,6 @@ if __name__ == "__main__":
     dsa_signature, dsa_time, dsa_cycles = create_dsa_signature(2048, msg)
     ecdsa_signature, ecdsa_time, ecdsa_cycles = create_ecdsa_signature(msg)
     
-    print(f"RSA signature length: {len(rsa_signature)}\t Average CPU time: {rsa_time}\t Average TSC ticks: {rsa_cycles}")
-    print(f"DSA signature length: {len(dsa_signature)}\t Average CPU time: {dsa_time}\t Average TSC ticks: {dsa_cycles}")
-    print(f"ECDSA signature length: {len(ecdsa_signature)}\t Average CPU time: {ecdsa_time}\t Average TSC ticks: {ecdsa_cycles}")
+    print(f"RSA signature length: {len(rsa_signature)}\t Average CPU time: {rsa_time:.15f}\t Average TSC ticks: {rsa_cycles:.6f}")
+    print(f"DSA signature length: {len(dsa_signature)}\t Average CPU time: {dsa_time:.15f}\t Average TSC ticks: {dsa_cycles:.6f}")
+    print(f"ECDSA signature length: {len(ecdsa_signature)}\t Average CPU time: {ecdsa_time:.15f}\t Average TSC ticks: {ecdsa_cycles:.6f}")
