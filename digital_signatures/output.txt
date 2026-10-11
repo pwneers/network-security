@@ -1,3 +1,3 @@
-RSA signature length: 256	 Average CPU time: 0.000919541310000	 Average TSC ticks: 3303452.160000
-DSA signature length: 70	 Average CPU time: 0.000476712480000	 Average TSC ticks: 1708983.360000
-ECDSA signature length: 63	 Average CPU time: 0.000104655300000	 Average TSC ticks: 372652.920000
+RSA signature length: 256	 Average CPU time: 0.000733275740000	 Average TSC ticks: 2635091.640000
+DSA signature length: 72	 Average CPU time: 0.000466375000000	 Average TSC ticks: 1674725.040000
+ECDSA signature length: 62	 Average CPU time: 0.000103680490000	 Average TSC ticks: 369370.800000
