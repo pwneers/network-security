@@ -65,3 +65,6 @@ $RECYCLE.BIN/
 build/
 out/
 temp/
+
+# Exclude zeek's logs
+!zeek/*.log

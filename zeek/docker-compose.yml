@@ -1,0 +1,13 @@
+services:
+  zeek:
+    build: .
+    image: netsec-zeek
+    container_name: netsec-zeek
+    volumes:
+      - ./:/work          # this folder is shared with the container
+    working_dir: /work
+    stdin_open: true
+    tty: true
+    cap_add:              # needed for live capture on the container's interface
+      - NET_ADMIN
+      - NET_RAW

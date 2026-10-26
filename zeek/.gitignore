@@ -1,0 +1,20 @@
+# Zeek output logs and runtime state
+*.log
+logs/
+.state/
+spool/
+extract_files/
+.zeek_history
+
+# Capture files (often large; download them again instead of committing)
+*.pcap
+*.pcapng
+*.cap
+
+# C++ build artifacts
+build/
+*.o
+*.a
+*.so
+*.out
+a.out
