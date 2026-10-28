@@ -1,3 +1,12 @@
+# --- PERSONAL 
+
+# Zeek
+zeek/nmap_intro_files
+zeek/3-nmap-scans/test-pcaps
+*.pcap
+
+# --- 
+
 # --- GENERATED PDFS
 *.pdf
 
@@ -65,4 +74,3 @@ $RECYCLE.BIN/
 build/
 out/
 temp/
-

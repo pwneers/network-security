@@ -1,0 +1,13 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ntlm
+#open	2026-10-28-14-23-01
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	username	hostname	domainname	server_nb_computer_name	server_dns_computer_name	server_tree_name	success
+#types	time	string	addr	port	addr	port	string	string	string	string	string	string	bool
+1499449658.045090	CkFZlu3Im1HHtqnaC9	192.168.10.8	8310	192.168.10.3	445	-	MITACS-PC2	-	DC	DC.Testbed1.ca	Testbed1.ca	T
+1499450558.112240	CxsfZH1Cdewrca0cqa	192.168.10.8	8380	192.168.10.3	445	-	MITACS-PC2	-	DC	DC.Testbed1.ca	Testbed1.ca	T
+1499451458.182032	COFib41xZS9ClXE7Qf	192.168.10.8	9039	192.168.10.3	445	-	MITACS-PC2	-	DC	DC.Testbed1.ca	Testbed1.ca	T
+1499452358.235394	CTX0tU1XbbFzZsVEA5	192.168.10.8	9372	192.168.10.3	445	-	MITACS-PC2	-	DC	DC.Testbed1.ca	Testbed1.ca	T
+#close	2026-10-28-14-23-18
