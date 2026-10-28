@@ -1,6 +1,7 @@
 # --- PERSONAL 
 
 # Zeek
+zeek/1-lecture-pcaps
 zeek/nmap_intro_files
 zeek/3-nmap-scans/test-pcaps
 *.pcap
@@ -46,7 +47,7 @@ $RECYCLE.BIN/
 *.aux
 *.fdb_latexmk
 *.fls
-*.log
+# *.log
 *.synctex.gz
 *.synctex(busy)
 *.toc
