@@ -1,0 +1,21 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ldap
+#open	2026-10-29-16-17-10
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	message_id	version	opcode	result	diagnostic_message	object	argument
+#types	time	string	addr	port	addr	port	int	int	string	string	string	string	string
+1499449218.802896	CCItAFGJk8SehZj	192.168.10.50	42480	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499449251.399006	CTtqoQ1naLHdNyVJU6	192.168.10.50	42486	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499449728.738285	CJ072tOmVtEjd3bN4	192.168.10.16	45730	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499449728.738914	CUZFRKduOpECsOdY1	192.168.10.16	45732	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499449843.630717	CxKTUw4Cp168RalHue	192.168.10.12	42732	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499449843.631056	CwP6j7XD1e159UHJ7	192.168.10.12	42734	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499450116.419184	CoRveDmcl8ckBZGP6	192.168.10.50	42500	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499450148.252257	CyOnTu2SWbIXvEJVkb	192.168.10.50	42506	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499451012.949826	C2NRj03KmA8YUnybhj	192.168.10.50	42516	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499451043.366249	CU24Wh1buxdozJZ3j9	192.168.10.50	42522	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499451908.372507	CucTuk2AOwLX8efei4	192.168.10.50	42528	192.168.10.3	389	2	-	unbind	-	-	-	-
+1499451941.204439	CDsKcQPkrWXh4YLul	192.168.10.50	42534	192.168.10.3	389	2	-	unbind	-	-	-	-
+#close	2026-10-29-16-17-28
