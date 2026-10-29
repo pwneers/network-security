@@ -206,3 +206,78 @@ The original packet quoted inside an ICMP error.
   [`bad_hdr_len`], [bool], [quoted header too short to read],
   [`bad_checksum`], [bool], [IP checksum wrong],
 )
+
+= `c$conn$conn_state` values
+Available in `connection_state_remove` at default priority (same as the `conn_state` column in `conn.log`).
+#simple-table(
+  ([State], [Meaning]),
+  (
+    [`S0`], [SYN seen, no reply],
+    [`S1`], [established, not terminated (no byte counts)],
+    [`SF`], [normal establishment and termination],
+    [`REJ`], [connection attempt rejected],
+    [`S2`], [established, originator tried to close, no reply],
+    [`S3`], [established, responder tried to close, no reply],
+    [`RSTO`], [established, originator aborted with RST],
+    [`RSTR`], [responder sent a RST],
+    [`RSTOS0`], [originator sent SYN then RST, no SYN-ACK seen],
+    [`RSTRH`], [responder sent SYN-ACK then RST, no SYN seen],
+    [`SH`], [originator sent SYN then FIN, no SYN-ACK seen],
+    [`SHR`], [responder sent SYN-ACK then FIN, no SYN seen],
+    [`OTH`], [no SYN seen, midstream traffic],
+  ),
+  columns: (auto, 1fr),
+)
+
+= Helpers
+== Strings (e.g. `c$history`)
+#simple-table(
+  ([Expression], [Returns], [Meaning]),
+  (
+    [`starts_with(s, "S")`], [bool], [`s` starts with `"S"`],
+    [`ends_with(s, "R")`], [bool], [`s` ends with `"R"`],
+    [`"A" in s`], [bool], [`s` contains `"A"`],
+    [`/^Sh?R$/ in s`], [bool], [regex (pattern) match],
+    [`s == "Sr"`], [bool], [exact match],
+    [`count_substr(s, "T")`], [count], [how many times `"T"` appears],
+    [`|s|`], [count], [string length],
+    [`fmt("%s -> %s: %d", a, b, n)`], [string], [build a message (`%s` any value, `%d` number)],
+  ),
+  columns: (auto, auto, 1fr),
+)
+
+== Ports, protocols, time
+#simple-table(
+  ([Expression], [Returns], [Meaning]),
+  (
+    [`get_port_transport_proto(p)`], [transport_proto], [`tcp`, `udp`, `icmp` or `unknown_transport`],
+    [`is_tcp_port(p)`], [bool], [port is TCP],
+    [`port_to_count(p)`], [count], [`445/tcp` -> `445`],
+    [`network_time()`], [time], [timestamp of the current packet (pcap time, not wall clock)],
+  ),
+  columns: (auto, auto, 1fr),
+)
+
+== Tables and sets
+#simple-table(
+  ([Expression], [Meaning]),
+  (
+    [`global t: table[addr, addr] of set[port];`], [table keyed by `[src, dst]`],
+    [`global s: set[string];`], [set, e.g. of `c$uid`],
+    [`[a, b] in t` / `x in s`], [membership test],
+    [`t[a, b] = set();`], [create an empty set for a key],
+    [`add t[a, b][p];` / `add s[x];`], [add to a set],
+    [`delete s[x];`], [remove from a set / table],
+    [`|t[a, b]|`], [number of elements],
+    [`&default=0`], [value returned for missing keys],
+    [`&create_expire=5min`], [entry removed 5 min after creation],
+    [`&read_expire=5min`], [entry removed 5 min after last access],
+  ),
+  columns: (auto, 1fr),
+)
+
+== Notices
+#code-block(
+  "NOTICE([$note=MyModule::Scan,\n        $msg=fmt(\"%s scanned %d ports on %s\", src, n, dst),\n        $src=src]);",
+  lang: "zeek",
+)
