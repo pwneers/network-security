@@ -1,5 +1,6 @@
-# Keep Zeek .log output (the repo's root .gitignore ignores *.log everywhere)
-!*.log
+# Zeek logs: only keep notice.log (the other logs can be regenerated from the pcap)
+*.log
+!notice.log
 
 # Zeek runtime state
 .state/
