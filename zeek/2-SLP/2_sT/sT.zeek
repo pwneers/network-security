@@ -4,7 +4,6 @@ module NmapSTScan;
 
 export {
 	redef enum Notice::Type += { Scan };
-
 	const threshold = 100 &redef;
 }
 
