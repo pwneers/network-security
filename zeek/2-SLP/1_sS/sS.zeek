@@ -8,6 +8,9 @@ export {
 	const threshold = 100 &redef;
 }
 
+# uids of connections whose SYN was crafted by Nmap (raw socket)
+global nmap_syn: set[string];
+
 global probed: table[addr, addr] of set[port];
 
 global notices: table[addr, addr] of count &default=0;
@@ -20,11 +23,29 @@ function is_nmap_syn(pkt: SYN_packet): bool {
 	    && ! pkt?$TSval;             # and no timestamp option (`?$` = "is present?")
 	}
 
+function has_ACK(history: string): bool {
+	return "A" in history;
+}
+
 event connection_SYN_packet(c: connection, pkt: SYN_packet) {
 	if ( ! pkt$is_orig )
 		return;
 
 	if ( ! is_nmap_syn(pkt) )
+		return;
+
+	add nmap_syn[c$uid];
+	}
+
+# connection_state_remove: the connection is over, so c$history is final.
+event connection_state_remove(c: connection) {
+	if ( c$uid !in nmap_syn )
+		return;
+
+	delete nmap_syn[c$uid];
+
+	# half-open: -sS never ACKs (ShR / Sr / S), a full handshake would
+	if ( has_ACK(c$history) )
 		return;
 
 	local src = c$id$orig_h;
