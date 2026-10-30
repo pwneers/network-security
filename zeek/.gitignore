@@ -12,6 +12,8 @@ extract_files/
 *.pcap
 *.pcapng
 *.cap
+# small (32 KB) test capture for -sO: the assignment pcap has no -sO scan
+!2-SLP/5_sO/sO.pcap
 
 # C++ build artifacts
 build/

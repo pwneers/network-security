@@ -1,0 +1,21 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-10-28 14:24 UTC
+Nmap scan report for 127.0.0.2
+Host is up (0.0000030s latency).
+Not shown: 241 closed n/a protocols (proto-unreach)
+PROTOCOL STATE         SERVICE
+1        open          icmp
+2        open|filtered igmp
+4        open|filtered ipv4
+6        open          tcp
+17       open          udp
+41       open|filtered ipv6
+47       open|filtered gre
+50       open|filtered esp
+51       open|filtered ah
+103      open|filtered pim
+108      open|filtered ipcomp
+132      open          sctp
+136      open|filtered udplite
+137      open|filtered mpls-in-ip
+
+Nmap done: 1 IP address (1 host up) scanned in 1.24 seconds
